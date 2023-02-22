@@ -22,8 +22,8 @@ class ParkingController extends Controller
             $placeType =PlacesType::where('id', $parking->placeType)->first();
             $data['id'] = $parking->id;
             $data['name'] = $parking->name;
-            $data['area'] = $area;
-            $data['placeType'] = $placeType;
+            $data['area'] = $area->area;
+            $data['placeType'] = $placeType->type;
             $data['city'] = $parking->city;
             $data['state'] = $parking->state;
             $data['pin'] = $parking->pin;
