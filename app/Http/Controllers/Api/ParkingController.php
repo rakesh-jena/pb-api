@@ -15,9 +15,10 @@ class ParkingController extends Controller
     public function allParkings()
     {
         $parkings = DB::table('parkings')->get();
-        $data = [];
+        $dataArray = [];
         foreach($parkings as $parking)
         {
+            $data = [];
             $area = Area::where('id', $parking->area)->first();
             $placeType =PlacesType::where('id', $parking->placeType)->first();
             $data['id'] = $parking->id;
@@ -30,9 +31,10 @@ class ParkingController extends Controller
             $data['address'] = $parking->address;
             $data['created_at'] = $parking->created_at;
             $data['updated_at'] = $parking->updated_at;
+            array_push($dataArray, $data);
         }
 
-        return $data;
+        return $dataArray;
     }
 
     //Add Parking
