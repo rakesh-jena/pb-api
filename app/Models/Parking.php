@@ -17,5 +17,10 @@ class Parking extends Model
         'state',
         'pin',
         'address',
+        'latitude',
+        'longitude',
+        'vehicleType',
+        'capacity',
+        'pricePerHour',
     ];
 }
